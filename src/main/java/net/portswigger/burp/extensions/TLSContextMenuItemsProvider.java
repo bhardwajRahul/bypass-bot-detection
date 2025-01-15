@@ -47,7 +47,7 @@ public class TLSContextMenuItemsProvider implements ContextMenuItemsProvider {
             if(requestResponses.isEmpty()) return null;
 
 
-            HttpRequestResponse requestResponse = requestResponses.getFirst();
+            HttpRequestResponse requestResponse = requestResponses.get(0);
             String userAgent = requestResponse.request().header("User-Agent").value();
             if (userAgent == null || userAgent.isBlank()) {
                 Arrays.stream(Browsers.values()).forEach(
