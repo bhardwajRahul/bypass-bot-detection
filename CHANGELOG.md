@@ -25,3 +25,9 @@
 ### Fixed 
 - Fixed Firefox and Chrome User-Agent to the latest version
 - Response notes
+
+## [0.0.6] - 2024-01-15
+
+### Fixed
+- Fixed Firefox and Chrome User-Agent to the latest version
+- Context menu shows only cipher suites that matches User-Agent header

@@ -159,7 +159,7 @@ public class Utilities {
         } else {
             try {
                 if (doesHostExist(requestResponse.request().url())) {
-                    return montoyaApi.http().sendRequest(requestResponse.withAnnotations(Annotations.annotations(negotiation)).request());
+                    return montoyaApi.http().sendRequest(requestResponse.request()).withAnnotations(Annotations.annotations(negotiation));
                 }
                 return null;
             } catch (Exception e) {

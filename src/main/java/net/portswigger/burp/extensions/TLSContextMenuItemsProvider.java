@@ -14,6 +14,7 @@ import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 import java.util.concurrent.ThreadPoolExecutor;
 
 public class TLSContextMenuItemsProvider implements ContextMenuItemsProvider {
@@ -43,13 +44,37 @@ public class TLSContextMenuItemsProvider implements ContextMenuItemsProvider {
                 requestResponses = contextMenuEvent.selectedRequestResponses();
             }
 
-            Arrays.stream(Browsers.values()).forEach(
-                    browser -> {
-                        JMenuItem item = new JMenuItem(browser.name);
-                        item.addActionListener(e -> addTLSCiphers(browser));
-                        menuItemList.add(item);
-                    }
-            );
+            if(requestResponses.isEmpty()) return null;
+
+
+            HttpRequestResponse requestResponse = requestResponses.getFirst();
+            String userAgent = requestResponse.request().header("User-Agent").value();
+            if (userAgent == null || userAgent.isBlank()) {
+                Arrays.stream(Browsers.values()).forEach(
+                        browser -> {
+                            JMenuItem item = new JMenuItem(browser.name);
+                            item.addActionListener(e -> addTLSCiphers(browser));
+                            menuItemList.add(item);
+                        }
+                );
+            } else {
+                Optional<Browsers> br = Arrays.stream(Browsers.values())
+                        .filter(browsers -> userAgent.contains(browsers.name)).findAny();
+                if (br.isPresent()) {
+                    JMenuItem message = new JMenuItem(Utilities.getResourceString("message"));
+                    message.addActionListener(e -> addTLSCiphers(br.get()));
+                    menuItemList.add(message);
+                } else {
+                    Arrays.stream(Browsers.values()).forEach(
+                            browser -> {
+                                JMenuItem item = new JMenuItem(browser.name);
+                                item.addActionListener(e -> addTLSCiphers(browser));
+                                menuItemList.add(item);
+                            }
+                    );
+                }
+            }
+
             String menuLabel = Utilities.enabledHTTPDowngrade() ? "Enable " : "Disable ";
             JMenuItem downgradeMenu = new JMenuItem(menuLabel + Utilities.getResourceString("menu_downgrade"));
             downgradeMenu.addActionListener(e -> downgradeHttp());
