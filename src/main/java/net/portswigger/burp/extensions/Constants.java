@@ -32,11 +32,11 @@ public class Constants {
 
     public static Map<String,String> FIREFOX_PLATFORMS = Map.of(
             "Windows",
-            "Windows NT 10.0; Win64; x64; rv:130.0",
+            "Windows NT 10.0; Win64; x64; rv:134.0",
             "Mac",
-            "Macintosh; Intel Mac OS X 14.6; rv:130.0",
+            "Macintosh; Intel Mac OS X 14.7; rv:134.0",
             "Linux",
-            "X11; Linux x86_64; rv:130.0");
+            "X11; Linux x86_64; rv:134.0");
     public static Map<String,String> CHROME_PLATFORMS = Map.of(
             "Windows",
             "Windows NT 10.0; Win64; x64",
@@ -59,9 +59,9 @@ public class Constants {
     );
     // Browsers
     public static Map<String,String> BROWSERS_USER_AGENTS = Map.of(
-            "Firefox", "User-Agent: Mozilla/5.0 (%s) Gecko/20100101 Firefox/129.0",
-            "Chrome", "User-Agent: Mozilla/5.0 (%s) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
-            "Safari", "User-Agent: Mozilla/5.0 (%s) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.5 Safari/605.1.15"
+            "Firefox", "User-Agent: Mozilla/5.0 (%s) Gecko/20100101 Firefox/134.0",
+            "Chrome", "User-Agent: Mozilla/5.0 (%s) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36",
+            "Safari", "User-Agent: Mozilla/5.0 (%s) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.2 Safari/605.1.15"
     );
     public static Map<String,String[]> BROWSERS_PROTOCOLS = Map.of(
             "Firefox", new String[]{"TLSv1.2", "TLSv1.3"},
@@ -157,6 +157,24 @@ public class Constants {
                     "TLS_RSA_WITH_AES_128_CBC_SHA",
                     "TLS_RSA_WITH_AES_256_CBC_SHA",
                     "SSL_RSA_WITH_3DES_EDE_CBC_SHA"},
+            // Chrome ciphers
+            new String[]{"TLSv1.2", "TLSv1.3"},new String[]{
+                    "TLS_AES_128_GCM_SHA256",
+                    "TLS_AES_256_GCM_SHA384",
+                    "TLS_CHACHA20_POLY1305_SHA256",
+                    "TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256",
+                    "TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256",
+                    "TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384",
+                    "TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384",
+                    "TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256",
+                    "TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256",
+                    "TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA",
+                    "TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA",
+                    "TLS_RSA_WITH_AES_128_GCM_SHA256",
+                    "TLS_RSA_WITH_AES_256_GCM_SHA384",
+                    "TLS_RSA_WITH_AES_128_CBC_SHA",
+                    "TLS_RSA_WITH_AES_256_CBC_SHA"
+            },
             // Firefox ciphers
             new String[]{"TLSv1.2", "TLSv1.3"}, new String[]{
                     "TLS_AES_128_GCM_SHA256",

@@ -1,6 +1,7 @@
 package net.portswigger.burp.extensions;
 
 import burp.api.montoya.core.Annotations;
+import burp.api.montoya.core.HighlightColor;
 import burp.api.montoya.http.message.HttpRequestResponse;
 import burp.api.montoya.http.message.responses.HttpResponse;
 import net.portswigger.burp.extensions.beens.Browsers;
