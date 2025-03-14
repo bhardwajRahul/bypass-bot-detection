@@ -54,10 +54,12 @@ public class MatchAndReplace {
         );
     }
     public boolean filterByComment(MatchAndReplace filter) {
-        return this.comment.equalsIgnoreCase(filter.comment);
+        return this.comment != null && filter.comment != null && this.comment.equalsIgnoreCase(filter.comment);
     }
+
     public boolean filterByBrowser(Browsers browser) {
-        return this.comment != null && this.comment.equalsIgnoreCase(String.format("Emulate %s User-Agent", browser.name));
+        return this.comment != null && browser != null &&
+                this.comment.equalsIgnoreCase(String.format("Emulate %s User-Agent", browser.name));
     }
 
     public void setEnabled(boolean enabled) {
