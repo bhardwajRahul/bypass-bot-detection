@@ -32,11 +32,11 @@ public class Constants {
 
     public static Map<String,String> FIREFOX_PLATFORMS = Map.of(
             "Windows",
-            "Windows NT 10.0; Win64; x64; rv:134.0",
+            "Windows NT 10.0; Win64; x64; rv:142.0",
             "Mac",
-            "Macintosh; Intel Mac OS X 14.7; rv:134.0",
+            "Macintosh; Intel Mac OS X 15.6; rv:142.0",
             "Linux",
-            "X11; Linux x86_64; rv:134.0");
+            "X11; Linux x86_64; rv:142.0");
     public static Map<String,String> CHROME_PLATFORMS = Map.of(
             "Windows",
             "Windows NT 10.0; Win64; x64",
@@ -59,9 +59,9 @@ public class Constants {
     );
     // Browsers
     public static Map<String,String> BROWSERS_USER_AGENTS = Map.of(
-            "Firefox", "User-Agent: Mozilla/5.0 (%s) Gecko/20100101 Firefox/134.0",
-            "Chrome", "User-Agent: Mozilla/5.0 (%s) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36",
-            "Safari", "User-Agent: Mozilla/5.0 (%s) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.2 Safari/605.1.15"
+            "Firefox", "User-Agent: Mozilla/5.0 (%s) Gecko/20100101 Firefox/142.0",
+            "Chrome", "User-Agent: Mozilla/5.0 (%s) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+            "Safari", "User-Agent: Mozilla/5.0 (%s) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/18.6 Safari/605.1.15"
     );
     public static Map<String,String[]> BROWSERS_PROTOCOLS = Map.of(
             "Firefox", new String[]{"TLSv1.2", "TLSv1.3"},
