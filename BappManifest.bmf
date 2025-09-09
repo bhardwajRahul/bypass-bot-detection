@@ -2,12 +2,12 @@ Uuid: 50fd63182afe43b7a3cf99b523f313f9
 ExtensionType: 1
 Name: Bypass Bot Detection
 RepoName: bypass-bot-detection
-ScreenVersion: 0.0.6
+ScreenVersion: 0.0.7
 SerialVersion: 2
 MinPlatformVersion: 18
 ProOnly: False
 Author: Zakhar Fedotkin, PortSwigger
 ShortDescription: Mutates ciphers to bypass TLS-fingerprint based bot detection.
-EntryPoint: build/libs/Bypass-Bot-Detection-0.0.6.jar
+EntryPoint: build/libs/Bypass-Bot-Detection-0.0.7.jar
 BuildCommand: ./gradlew jar
 SupportedProducts: Pro, Community
